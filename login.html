@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Integrador</title>
+<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<style>
+
+
+
+.boxs{
+    border-radius: 0rem;
+    box-shadow: 5px 5px 8px 4px rgba(0, 0, 0, 0.301);
+}
+
+</style>
+
+</head>
+
+<body>
+    
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card text-white" style="border-radius: 1rem; background-color: #08256C;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-5 mt-md-4 pb-5">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase"><img src="imagens/logonr1.png" alt="logo clg" srcset=""></h2>
+                    <p class="text-white mb-5">Coloque seu usuário e sua senha!</p>
+                    <div id="erroLogin" class="text-danger mb-5"></div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="cpf" id="typeCpf" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite seu CPF"/>
+                      <label class="form-label" for="typeCpf">CPF</label>
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="typePassword" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite sua senha" />
+                      <label class="form-label" for="typePassword">Senha</label>
+                    </div>
+      
+                    <p class="small mb-5 pb-lg-2"><a class="text-white" href="#!" >Esqueceu sua senha?</a></p>
+      
+                    <button class="btn btn-outline-light btn-lg px-5" type="submit" style="border-radius: 0rem; background-color: #39D599; box-shadow: 5px 5px 8px 4px rgba(0, 0, 0, 0.301);" onclick="logar()">Login</button>
+      
+                  </div>
+      
+                  <div>
+                    <p class="mb-0">Não tem uma conta? <a href="cadastro.html" class="text-white fw-bold">Criar conta</a>
+                    </p>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        cpf = document.getElementById('typeCpf')
+        senha = document.getElementById('typePassword')
+        function logar(){
+          if(cpf.value.length <11 && senha.value.length < 8){
+            document.getElementById('erroLogin').innerHTML=("Login inválido")
+          }else{
+            window.location.href = 'aluno.html'
+          }
+        }
+
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+</body>
+</html>

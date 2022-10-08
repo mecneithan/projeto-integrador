@@ -1,0 +1,42 @@
+.nomeAlunos{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    font-size: medium;
+    cursor: pointer;
+    transition:0.7s all;
+}
+.nomeAlunos:hover{
+    transform: scale(1.1);
+    box-shadow: 7px 7px 7px #000000;
+    
+}
+.boxPadrao{
+    background-color: #39D599;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #000000;
+}
+.filtrar{
+width: 15%;
+margin: 5% auto;
+font-size: medium;
+cursor: pointer;
+transition:0.7s all;
+
+}
+.filtrar:hover{
+    transform: scale(1.1);
+    box-shadow: 7px 7px 7px #000000;
+    
+}
+
+
+
+.boxLow{
+    background-color: #39D599;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #000000;
+    margin: 5px; 
+
+}
+

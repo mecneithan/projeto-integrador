@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Integrador</title>
+<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<style>
+
+.boxs{
+    border-radius: 0rem;
+    box-shadow: 5px 5px 8px 4px rgba(0, 0, 0, 0.301);
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card text-white" style="border-radius: 1rem; background-color: #08256C;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-5 mt-md-4 pb-5">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase"><img src="imagens/logonr1.png" alt="logo clg" srcset=""></h2>
+                    <p class="text-white mb-5" id="msgConfirm">Preencha os campos abaixo para criar sua conta!</p>
+                    <div class="text-danger mb-5" id="msgError"></div>
+                    <div class="text-success mb-5" id="msgSuccess"></div>
+      
+                    <div class="form-outline form-white mb-4">
+                        <input type="text" id="typeName" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite seu nome"/>
+                        <label class="form-label" id="labelName" for="typeName">Nome do usuário</label>
+                      </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="typeCpf" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite seu CPF"/>
+                      <label class="form-label" id="labelCpf" for="typeCpf">CPF</label>
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="createPassword" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite sua senha" />
+                      <label class="form-label" id="labelCreatePassword" for="typePassword">Senha</label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                        <input type="password" id="confirmPassword" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Confirme sua senha" />
+                        <label class="form-label" id="labelConfirmPassword" for="confirmPassword">Confirmação de senha</label>
+                      </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="typeMatricula" class="form-control form-control-lg boxs" style="border-radius: 0rem;" placeholder="Digite a matrícula do aluno"/>
+                      <label class="form-label" id="labelMatricula" for="typeMatricula">Matrícula do aluno</label>
+                    </div>
+            
+                    <button onclick="cadastrar()" class="btn btn-outline-light btn-lg px-5" type="submit" style="border-radius: 0rem; background-color: #39D599; box-shadow: 5px 5px 8px 4px rgba(0, 0, 0, 0.301);">Criar conta</button>
+      
+                  </div>
+      
+                  <div>
+                    <p class="mb-0">Já tem uma conta? <a href="login.html" class="text-white fw-bold">Fazer login</a>
+                    </p>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <script>
+
+        let name = document.querySelector('#typeName')
+        let labelName = document.querySelector('#labelName')
+        let validName = false
+        name.addEventListener('keyup', ()=>{
+            if(name.value.length <= 2){
+                labelName.setAttribute('style', 'color: red')
+                labelName.innerHTML= "Nome do usuário *Insira no mínimo 3 caracteres!"
+            }else{
+                labelName.setAttribute('style', 'color: green')
+                labelName.innerHTML= "Nome do usuário"
+                let validName = true
+
+            }
+        })
+
+        let cpf = document.querySelector('#typeCpf')
+        let labelCpf = document.querySelector('#labelCpf')
+        let validCpf = false
+        cpf.addEventListener('keyup', ()=>{
+            if(cpf.value.length != 11){
+                labelCpf.setAttribute('style', 'color: red')
+                labelCpf.innerHTML=("CPF *Insira o CPF com 11 dígitos")
+            }else{
+                labelCpf.setAttribute('style', 'color: green')
+                labelCpf.innerHTML=('CPF')
+                let validCpf = true
+
+            }
+        })
+
+         let createPassword = document.querySelector('#createPassword')
+         let labelCreatePassword = document.querySelector('#labelCreatePassword')
+         let validCreatePassword = false
+         createPassword.addEventListener('keyup', ()=>{
+             if(createPassword.value.length <= 7){
+                 labelCreatePassword.setAttribute('style', 'color: red')
+                 labelCreatePassword.innerHTML=("Senha *Insira uma senha com no mínimo 8 caracteres!")
+
+             }else{
+                 labelCreatePassword.setAttribute('style', 'color: green')
+                 labelCreatePassword.innerHTML=("Senha")
+                 let validCreatePassword = true
+
+             }
+        })
+
+         let confirmPassword= document.querySelector('#confirmPassword')
+         let labelConfirmPassword = document.querySelector('#labelConfirmPassword')
+         let validConfirmPassword = false
+         confirmPassword.addEventListener('keyup', ()=>{
+             if(confirmPassword.value != createPassword.value){
+                 labelConfirmPassword.setAttribute('style', 'color: red')
+                 labelConfirmPassword.innerHTML=("Confirmação de senha *As senhas estão diferentes!")
+             }else{
+                 labelConfirmPassword.setAttribute('style', 'color: green')
+                 labelConfirmPassword.innerHTML=("Confirmação de senha")
+                 let validConfirmPassword = true
+
+             }
+        })
+
+        let matricula = document.querySelector('#typeMatricula')
+        let labelMatricula = document.querySelector('#labelMatricula')
+        let validMatricula = false
+        matricula.addEventListener('keyup', ()=>{
+            if(matricula.value.length !=10){
+                labelMatricula.setAttribute('style', 'color: red')
+                labelMatricula.innerHTML=("Matricula do aluno *Insira a matrícula com 10 caracteres!")
+
+             }else{
+                labelMatricula.setAttribute('style', 'color: green')
+                labelMatricula.innerHTML=("Matricula do aluno")
+                let validMatricula = true
+
+             }
+        })
+
+        let msgConfirm = document.querySelector('#msgConfirm')
+
+
+
+        function cadastrar(){
+            if(validName && validCpf && validCreatePassword && validConfirmPassword && validMatricula){
+                msgConfirm.innerHTML=("Cadastro realizado com sucesso!")
+                msgConfirm.classList.replace('text-white','text-primary')
+
+
+            }else{
+                msgConfirm.innerHTML=("Preencha os campos corretamente!")
+                msgConfirm.classList.replace('text-white','text-danger')
+            }
+        }
+        
+      </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>
