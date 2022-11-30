@@ -70,7 +70,8 @@
         senha = document.getElementById('typePassword')
         function logar(){
           if(cpf.value.length <11 && senha.value.length < 8){
-            document.getElementById('erroLogin').innerHTML=("Login inválido")
+            // document.getElementById('erroLogin').innerHTML=("Login inválido")
+            window.location.href = 'responsavel.html'
           }else{
             window.location.href = 'aluno.html'
           }
