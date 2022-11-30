@@ -3,46 +3,82 @@ INSERT INTO public.escola(
 	 nome, unidade)
 	VALUES ('Escola Professor Edward Newgate', 01);
 
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Edward Newgate Recife', 02);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Gol D. Roger', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Roronoa Zoro', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Vinsmoke Sanji', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Monkey D. Luffy', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Tony Tony Chopper', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Donquixote Doflamingo', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Shanks', 01);
+
+INSERT INTO public.escola(
+	 nome, unidade)
+	VALUES ('Escola Professor Usopp', 01);
+
 -- ALUNOS --
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000000', 'Breno Luiz Lucas Costa', 8);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000000', 'Breno Luiz Lucas Costa', 8, 1);
 
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000001', 'Rayssa Letícia Stefany', 7);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000001', 'Rayssa Letícia Stefany', 7, 1);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000002', 'Rita Ayla Emily', 9);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000002', 'Rita Ayla Emily', 9, 2);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000003', 'Nelson Edson Breno da Mota', 1);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000003', 'Nelson Edson Breno da Mota', 1, 3);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000004', 'Luan Juan Alves', 2);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000004', 'Luan Juan Alves', 2, 3);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000005', 'Camila Joana Isabela', 3);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000005', 'Camila Joana Isabela', 3, 7);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000006', 'Luís Bento Thales Fernandes', 6);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000006', 'Luís Bento Thales Fernandes', 6, 3);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000007', 'Débora Antonella Carla', 5);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000007', 'Débora Antonella Carla', 5, 5);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000008', 'Michele Rocha Leite', 7);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000008', 'Michele Rocha Leite', 7, 2);
 	
 INSERT INTO public.alunos(
-	 matricula, nome, serie)
-	VALUES ( '10000000009', 'Thiago Costa Filho', 8);
+	 matricula, nome, serie, id_escola)
+	VALUES ( '10000000009', 'Thiago Costa Filho', 8, 6);
 
 -- RESPONSAVEL -- 
 
@@ -99,6 +135,34 @@ INSERT INTO public.funcionario(
 INSERT INTO public.funcionario(
 	 cpf, cargo, sexo, id_escola)
 	VALUES ('12064707980','Monitor','F', 1);
+
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('41599071053','Porteiro','M', 2);
+
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('75416721065','Auxiliador de porteiro','M', 2);
+	
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('81830684051','Monitor','F', 2);
+
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('30695622056','Porteiro','M', 3);
+
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('99459834078','Auxiliador de porteiro','M', 3);
+	
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('12703963076','Monitor','F', 4);
+
+INSERT INTO public.funcionario(
+	 cpf, cargo, sexo, id_escola)
+	VALUES ('38136541094','Monitor','F', 5);
 
 -- ENDEREÇO --
 

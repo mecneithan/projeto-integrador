@@ -18,7 +18,9 @@ CREATE TABLE alunos (
 	id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	matricula CHAR(11) not null,
 	nome VARCHAR(50) not null,
-	serie INTEGER not null
+	serie INTEGER not null,
+	id_escola INTEGER not null,
+	FOREIGN KEY (id_escola) REFERENCES escola (id)
 	
 );
 
